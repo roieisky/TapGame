@@ -33,7 +33,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="3OF-Um-gkf" kind="show" id="zmz-sa-4LV"/>
+                                    <segue destination="3OF-Um-gkf" kind="show" id="bBC-GJ-2BO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TapGame" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVM-fc-hXg">
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="876" y="112"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller2-->
         <scene sceneID="ne7-ZO-hlY">
             <objects>
-                <viewController id="3OF-Um-gkf" customClass="ViewController" customModule="TapGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3OF-Um-gkf" customClass="ViewController2" customModule="TapGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PnN-kQ-8zx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tapAction:" destination="3OF-Um-gkf" eventType="touchUpInside" id="euu-gn-dCT"/>
+                                    <action selector="tapAction:" destination="3OF-Um-gkf" eventType="touchUpInside" id="TMl-yh-weH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,8 +90,8 @@
                         <viewLayoutGuide key="safeArea" id="RxL-1M-GOY"/>
                     </view>
                     <connections>
-                        <outlet property="num" destination="28d-f5-NWk" id="DXx-4G-KAX"/>
-                        <outlet property="tapBtn" destination="NCM-nx-BLa" id="NpU-hD-tmJ"/>
+                        <outlet property="num" destination="28d-f5-NWk" id="PAT-EJ-uGr"/>
+                        <outlet property="tapBtn" destination="NCM-nx-BLa" id="peP-ss-TQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nP7-jO-7TT" userLabel="First Responder" sceneMemberID="firstResponder"/>

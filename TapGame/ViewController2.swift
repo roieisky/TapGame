@@ -15,14 +15,16 @@ class ViewController2: UIViewController {
 
     var countNum = 3
     var countTap = 10
+    // タイマー
+    var timer : Timer!
     
     let conWidth = UIScreen.main.bounds.size.width
     let conHeight = UIScreen.main.bounds.size.height
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tapBtn.frame.origin = randPoint()
-        tapBtn.isHidden = false
+        // カウントダウンタイマー作成
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController2.onUpdate(timer:)), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
 
@@ -35,12 +37,32 @@ class ViewController2: UIViewController {
         countTap -= 1
         if(countTap == 0)
         {
+            tapBtn.isHidden = true
             //画面遷移
         }
         else
         {
             tapBtn.frame.origin = randPoint()
             tapBtn.setTitle(String(countTap), for: .normal)
+        }
+    }
+    @objc func onUpdate(timer : Timer){
+        
+        // カウントの値1増加
+        countNum -= 1
+        
+        if(countNum == 0){
+            timer.invalidate()
+            num.isHidden = true
+            tapBtn.frame.origin = randPoint()
+            tapBtn.isHidden = false
+            //計測タイマー作成
+        }
+        else{
+            // 桁数を指定して文字列を作る
+            let str = String(countNum)
+            // ラベルに表示
+            num.text = str
         }
     }
     

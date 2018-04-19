@@ -12,11 +12,14 @@ class ViewController2: UIViewController {
     
     @IBOutlet weak var tapBtn: UIButton!
     @IBOutlet weak var num: UILabel!
-
+    @IBOutlet weak var timerSecond: UILabel!
+    @IBOutlet weak var timerMSec: UILabel!
+    
     var countNum = 3
     var countTap = 10
     // タイマー
     var timer : Timer!
+    var startTime = Date()
     
     let conWidth = UIScreen.main.bounds.size.width
     let conHeight = UIScreen.main.bounds.size.height
@@ -39,8 +42,10 @@ class ViewController2: UIViewController {
         countTap -= 1
         if(countTap == 0)
         {
+            stopTimer()
             tapBtn.isHidden = true
             //画面遷移
+            self.performSegue(withIdentifier: "ToViewController3", sender: nil)
         }
         else
         {
@@ -59,6 +64,7 @@ class ViewController2: UIViewController {
             tapBtn.frame.origin = randPoint()
             tapBtn.isHidden = false
             //計測タイマー作成
+            startTimer()
         }
         else{
             // 桁数を指定して文字列を作る
@@ -80,6 +86,53 @@ class ViewController2: UIViewController {
         return randPoint
     }
     
+    @objc func startTimer() {
+        if timer != nil{
+            // timerが起動中なら一旦破棄する
+            timer.invalidate()
+        }
+        
+        timer = Timer.scheduledTimer(
+            timeInterval: 0.01,
+            target: self,
+            selector: #selector(self.timerCounter),
+            userInfo: nil,
+            repeats: true)
+        
+        startTime = Date()
+    }
+    
+    @objc func stopTimer() {
+        if timer != nil{
+            timer.invalidate()
+            
+            //timerMinute.text = "00"
+            //timerSecond.text = "00"
+            //timerMSec.text = "00"
+        }
+    }
+    
+    @objc func timerCounter() {
+        // タイマー開始からのインターバル時間
+        let currentTime = Date().timeIntervalSince(startTime)
+        
+        // fmod() 余りを計算
+        //let minute = (Int)(fmod((currentTime/60), 60))
+        // currentTime/60 の余り
+        let second = (Int)(fmod(currentTime, 60))
+        // floor 切り捨て、小数点以下を取り出して *100
+        let msec = (Int)((currentTime - floor(currentTime))*100)
+        
+        // %02d： ２桁表示、0で埋める
+        //let sMinute = String(format:"%02d", minute)
+        let sSecond = String(format:"%02d", second)
+        let sMsec = String(format:"%02d", msec)
+        
+        //timerMinute.text = sMinute
+        timerSecond.text = sSecond
+        timerMSec.text = sMsec
+        
+    }
 
     /*
     // MARK: - Navigation

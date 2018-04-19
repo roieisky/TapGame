@@ -33,6 +33,8 @@ class ViewController2: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //tapBtn押下
+    //ボタンをランダムな座標に出現させ、カウントが0になると結果画面に遷移する
     @IBAction func tapAction(_ sender: UIButton) {
         countTap -= 1
         if(countTap == 0)
@@ -48,7 +50,7 @@ class ViewController2: UIViewController {
     }
     @objc func onUpdate(timer : Timer){
         
-        // カウントの値1増加
+        // カウント-1
         countNum -= 1
         
         if(countNum == 0){

@@ -15,6 +15,7 @@
 		DFA6730C208839EC00DD8152 /* TapGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6730B208839EC00DD8152 /* TapGameTests.swift */; };
 		DFA67317208839EC00DD8152 /* TapGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA67316208839EC00DD8152 /* TapGameUITests.swift */; };
 		DFA67327208870E700DD8152 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA67326208870E700DD8152 /* ViewController2.swift */; };
+		DFA673292088857200DD8152 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA673282088857200DD8152 /* ViewController3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DFA67316208839EC00DD8152 /* TapGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGameUITests.swift; sourceTree = "<group>"; };
 		DFA67318208839EC00DD8152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFA67326208870E700DD8152 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		DFA673282088857200DD8152 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				DFA672FF208839EC00DD8152 /* LaunchScreen.storyboard */,
 				DFA67302208839EC00DD8152 /* Info.plist */,
 				DFA67326208870E700DD8152 /* ViewController2.swift */,
+				DFA673282088857200DD8152 /* ViewController3.swift */,
 			);
 			path = TapGame;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				DFA672F9208839EC00DD8152 /* ViewController.swift in Sources */,
 				DFA672F7208839EC00DD8152 /* AppDelegate.swift in Sources */,
+				DFA673292088857200DD8152 /* ViewController3.swift in Sources */,
 				DFA67327208870E700DD8152 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

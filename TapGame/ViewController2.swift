@@ -35,7 +35,15 @@ class ViewController2: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // Segue 準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ToViewController3") {
+            let vc3: ViewController3 = (segue.destination as? ViewController3)!
+            // ViewController3のタイム設定
+            vc3.textSec = timerSecond.text
+            vc3.textMSec = timerMSec.text
+        }
+    }
     //tapBtn押下
     //ボタンをランダムな座標に出現させ、カウントが0になると結果画面に遷移する
     @IBAction func tapAction(_ sender: UIButton) {
@@ -73,19 +81,17 @@ class ViewController2: UIViewController {
             num.text = str
         }
     }
-    
-    
-    
-    
+ 
+    //ランダムな座標を求める
     //tapBtn.frame.origin = randPoint()
     func randPoint() -> CGPoint{
         let randWidth  = CGFloat(arc4random_uniform(UInt32(conWidth)-80))
-        let randHeight = CGFloat(arc4random_uniform(UInt32(conHeight)-80))
-        let randPoint  = CGPoint(x:randWidth,y:randHeight)
+        let randHeight = CGFloat(arc4random_uniform(UInt32(conHeight)-130))
+        let randPoint  = CGPoint(x:randWidth,y:randHeight + 20)
         
         return randPoint
     }
-    
+    //計測タイマースタート
     @objc func startTimer() {
         if timer != nil{
             // timerが起動中なら一旦破棄する
@@ -101,7 +107,7 @@ class ViewController2: UIViewController {
         
         startTime = Date()
     }
-    
+    //タイマーストップ
     @objc func stopTimer() {
         if timer != nil{
             timer.invalidate()
@@ -111,7 +117,7 @@ class ViewController2: UIViewController {
             //timerMSec.text = "00"
         }
     }
-    
+    //計算タイマーのリピート処理
     @objc func timerCounter() {
         // タイマー開始からのインターバル時間
         let currentTime = Date().timeIntervalSince(startTime)

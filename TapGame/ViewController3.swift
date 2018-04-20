@@ -10,9 +10,22 @@ import UIKit
 
 class ViewController3: UIViewController {
 
+    @IBOutlet weak var resultSecond: UILabel!
+    @IBOutlet weak var resultMSec: UILabel!
+    
+    var textSec:String?
+    var textMSec:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        resultSecond.text = textSec
+        resultMSec.text = textMSec
+        
+        if(textSec?.hasPrefix("0"))!{
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
 

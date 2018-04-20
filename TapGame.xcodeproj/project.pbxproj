@@ -16,6 +16,7 @@
 		DFA67317208839EC00DD8152 /* TapGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA67316208839EC00DD8152 /* TapGameUITests.swift */; };
 		DFA67327208870E700DD8152 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA67326208870E700DD8152 /* ViewController2.swift */; };
 		DFA673292088857200DD8152 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA673282088857200DD8152 /* ViewController3.swift */; };
+		DFA6732B2089CC4F00DD8152 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6732A2089CC4F00DD8152 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		DFA67318208839EC00DD8152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFA67326208870E700DD8152 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		DFA673282088857200DD8152 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
+		DFA6732A2089CC4F00DD8152 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				DFA67302208839EC00DD8152 /* Info.plist */,
 				DFA67326208870E700DD8152 /* ViewController2.swift */,
 				DFA673282088857200DD8152 /* ViewController3.swift */,
+				DFA6732A2089CC4F00DD8152 /* TableViewController.swift */,
 			);
 			path = TapGame;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				DFA672F9208839EC00DD8152 /* ViewController.swift in Sources */,
 				DFA672F7208839EC00DD8152 /* AppDelegate.swift in Sources */,
 				DFA673292088857200DD8152 /* ViewController3.swift in Sources */,
+				DFA6732B2089CC4F00DD8152 /* TableViewController.swift in Sources */,
 				DFA67327208870E700DD8152 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

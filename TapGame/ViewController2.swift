@@ -16,7 +16,8 @@ class ViewController2: UIViewController {
     @IBOutlet weak var timerMSec: UILabel!
     
     var countNum = 3
-    var countTap = 10
+    var countTap = 1
+    var nowTime = 99.99
     // タイマー
     var timer : Timer!
     var startTime = Date()
@@ -40,8 +41,9 @@ class ViewController2: UIViewController {
         if (segue.identifier == "ToViewController3") {
             let vc3: ViewController3 = (segue.destination as? ViewController3)!
             // ViewController3のタイム設定
-            vc3.textSec = timerSecond.text
-            vc3.textMSec = timerMSec.text
+            vc3.textSec = timerSecond.text!
+            vc3.textMSec = timerMSec.text!
+            vc3.sec = nowTime
         }
     }
     //tapBtn押下
@@ -111,10 +113,6 @@ class ViewController2: UIViewController {
     @objc func stopTimer() {
         if timer != nil{
             timer.invalidate()
-            
-            //timerMinute.text = "00"
-            //timerSecond.text = "00"
-            //timerMSec.text = "00"
         }
     }
     //計算タイマーのリピート処理
@@ -128,16 +126,24 @@ class ViewController2: UIViewController {
         let second = (Int)(fmod(currentTime, 60))
         // floor 切り捨て、小数点以下を取り出して *100
         let msec = (Int)((currentTime - floor(currentTime))*100)
-        
+
         // %02d： ２桁表示、0で埋める
         //let sMinute = String(format:"%02d", minute)
         let sSecond = String(format:"%02d", second)
         let sMsec = String(format:"%02d", msec)
         
-        //timerMinute.text = sMinute
+        //時間更新
         timerSecond.text = sSecond
         timerMSec.text = sMsec
+        nowTime = Double(second + (msec / 100))
         
+        //59秒以上で強制終了
+        if(nowTime >= 59.00){
+            stopTimer()
+            tapBtn.isHidden = true
+            //画面遷移
+            self.performSegue(withIdentifier: "ToViewController3", sender: nil)
+        }
     }
 
     /*

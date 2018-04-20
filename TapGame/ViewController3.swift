@@ -14,41 +14,25 @@ class ViewController3: UIViewController {
     @IBOutlet weak var resultMSec: UILabel!
     @IBOutlet weak var meritText: UILabel!
     
-    var textSec:String?
-    var textMSec:String?
-    var sec = 99
+    var textSec = "99"
+    var textMSec = "99"
+    var sec = 99.99
+    
+    //let originalPasteboard: UIPasteboard = UIPasteboard(name: UIPasteboardName(rawValue: "bestTime1"), create: true)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         resultSecond.text = textSec
         resultMSec.text = textMSec
-        sec = Int(String(describing: textSec?.suffix(1)))!
         
-        if(textSec?.hasPrefix("0"))!{
-            if(sec < 2){
-                meritText.text = "神"
-            }
-            else if (sec < 3){
-                meritText.text = "プロ"
-            }
-            else if (sec < 4){
-                meritText.text = "若い！"
-            }
-            else if (sec < 6){
-                meritText.text = "平凡..."
-            }
-            else if (sec < 8){
-                meritText.text = "中年"
-            }
-            else if (sec < 10){
-                meritText.text = "老人"
-            }
-            else{
-                meritText.text = "遅い..."
-            }
-        }
-        
+            if(sec < 2){meritText.text = "神"}
+            else if (sec < 3){meritText.text = "プロ"}
+            else if (sec < 4){meritText.text = "若い！"}
+            else if (sec < 6){meritText.text = "平凡..."}
+            else if (sec < 9){meritText.text = "中年"}
+            else if (sec < 15){meritText.text = "老人"}
+            else{meritText.text = "遅い..."}
         // Do any additional setup after loading the view.
     }
 

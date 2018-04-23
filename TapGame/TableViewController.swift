@@ -15,9 +15,11 @@ UITableViewDataSource, UITableViewDelegate{
     
     // section毎の画像配列
     let label2Array: NSArray = ["02:00","04:00","04:30","05:00",
-                                "05:09","06:00","09:00","10:00"]
+                                "05:09","06:00","09:00","10:00",
+                                "10:00","10:00"]
     let label4Array: NSArray = ["2018/04/20","2018/04/18","2018/04/20","2018/04/19",
-                                "2018/04/16","2018/04/13","2018/04/12","2018/04/10",]
+                                "2018/04/16","2018/04/13","2018/04/12","2018/04/10",
+                                "2018/04/10","2018/04/10"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +66,7 @@ UITableViewDataSource, UITableViewDelegate{
     // Cell の高さを１２０にする
     func tableView(_ table: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0
+        return table.bounds.height / 10
     }
     
     

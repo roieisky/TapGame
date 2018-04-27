@@ -13,25 +13,23 @@ UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var table: UITableView!
     
-    //let defaults = UserDefaults.standard
+    //ForKey定義
     let label2ArrayForKey:String = "label2Key"
     let label4ArrayForKey:String = "label4Key"
+    let secArrayForKey:String = "secKey"
     
-    // section毎の画像配列
-    var label2Array:Array<String> = []//Array(repeating: "?", count: 10)
-                                /*["02:00","04:00","04:30","05:00",
-                                "05:09","06:00","09:00","10:00",
-                                "10:00","10:00"]*/
-    var label4Array:Array<String> = []//Array(repeating: "?", count: 10)
-                                /*["2018/04/20","2018/04/18","2018/04/20","2018/04/19",
-                                "2018/04/16","2018/04/13","2018/04/12","2018/04/10",
-                                "2018/04/10","2018/04/10"]*/
+    // 配列定義
+    var label2Array:Array<String> = []
+    var label4Array:Array<String> = []
+    var secArray:Array<Double> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label2Array = readlabel2Array() 
-        label4Array = readlabel4Array() 
+        //保存してある配列の取得
+        label2Array = readlabel2Array()
+        label4Array = readlabel4Array()
+        secArray = readSecArray()
         
         // Do any additional setup after loading the view.
     }
@@ -72,7 +70,7 @@ UITableViewDataSource, UITableViewDelegate{
         
         return cell
     }
-    // Cell の高さを１２０にする
+    // Cell の高さを10分割にする
     func tableView(_ table: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         return table.bounds.height / 10
@@ -91,13 +89,16 @@ UITableViewDataSource, UITableViewDelegate{
         //配列を保存する。
         saveArray(result: label2Array)
         saveArray(result: label4Array)
+        saveArray(result: secArray)
     }
 
     // 保存する
-    func saveArray(result: Array<String>) {
+    // 保存する
+    func saveArray(result: Array<Any>) {
         let defaults = UserDefaults.standard
         defaults.set(label2Array, forKey:label2ArrayForKey)
         defaults.set(label4Array, forKey:label4ArrayForKey)
+        defaults.set(secArray, forKey:secArrayForKey)
         defaults.synchronize()
     }
     
@@ -125,11 +126,24 @@ UITableViewDataSource, UITableViewDelegate{
             return Array(repeating: "?", count: 10)
         }
     }
+    //secArray取得
+    func readSecArray() -> Array<Double>  {
+        let defaults = UserDefaults.standard
+        if let aaa:Array<Double> = (defaults.object(forKey: secArrayForKey) as? Array<Double>)
+        {
+            return aaa
+        }
+        else
+        {
+            return Array(repeating: 99.99, count: 10)
+        }
+    }
     //reset
     func reset(){
         //初期化
         label2Array = Array(repeating: "?", count: 10)
         label4Array = Array(repeating: "?", count: 10)
+        secArray = Array(repeating: 99.99, count: 10)
     }
     @IBAction func resetAction(_ sender: UIButton) {
         //初期化
@@ -137,6 +151,7 @@ UITableViewDataSource, UITableViewDelegate{
         //配列を保存する。
         saveArray(result: label2Array)
         saveArray(result: label4Array)
+        saveArray(result: secArray)
         //再描画
         loadView()
         viewDidLoad()

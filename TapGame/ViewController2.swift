@@ -16,7 +16,7 @@ class ViewController2: UIViewController {
     @IBOutlet weak var timerMSec: UILabel!
     
     var countNum = 3
-    var countTap = 10
+    var countTap = 1
     var nowTime = 99.99
     // タイマー
     var timer : Timer!

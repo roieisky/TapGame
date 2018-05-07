@@ -16,7 +16,11 @@ class ViewController3: UIViewController {
     
     var textSec = "99"
     var textMSec = "99"
-    var sec = 99.99
+    var sec = 9999
+    
+    
+    
+    
     
     //ForKey定義
     let label2ArrayForKey:String = "label2Key"
@@ -26,7 +30,9 @@ class ViewController3: UIViewController {
     // 配列定義
     var label2Array:Array<String> = []
     var label4Array:Array<String> = []
-    var secArray:Array<Double> = []
+    var secArray:Array<Int> = []
+    
+    var label2label4:[[String]] = []
     
     //let originalPasteboard: UIPasteboard = UIPasteboard(name: UIPasteboardName(rawValue: "bestTime1"), create: true)!
     
@@ -42,12 +48,12 @@ class ViewController3: UIViewController {
         resultMSec.text = textMSec
         let strTime = textSec + "." + textMSec
         
-        if(sec < 2.0){meritText.text = "神"}
-        else if (sec < 3.0){meritText.text = "プロ"}
-        else if (sec < 4.0){meritText.text = "若い！"}
-        else if (sec < 6.0){meritText.text = "平凡..."}
-        else if (sec < 9.0){meritText.text = "中年"}
-        else if (sec < 15.0){meritText.text = "老人"}
+        if(sec < 200){meritText.text = "神"}
+        else if (sec < 300){meritText.text = "プロ"}
+        else if (sec < 400){meritText.text = "若い！"}
+        else if (sec < 600){meritText.text = "平凡..."}
+        else if (sec < 900){meritText.text = "中年"}
+        else if (sec < 1500){meritText.text = "老人"}
         else{meritText.text = "遅い..."}
         
         //取得した配列要素とタイムを比較して挿入
@@ -114,18 +120,17 @@ class ViewController3: UIViewController {
         }
     }
     //secArray取得
-    func readSecArray() -> Array<Double>  {
+    func readSecArray() -> Array<Int>  {
         let defaults = UserDefaults.standard
-        if let aaa:Array<Double> = (defaults.object(forKey: secArrayForKey) as? Array<Double>)
+        if let aaa:Array<Int> = (defaults.object(forKey: secArrayForKey) as? Array<Int>)
         {
             return aaa
         }
         else
         {
-            return Array(repeating: 99.99, count: 10)
+            return Array(repeating: 9999, count: 10)
         }
     }
-
 
     /*
     // MARK: - Navigation
@@ -138,3 +143,5 @@ class ViewController3: UIViewController {
     */
 
 }
+
+

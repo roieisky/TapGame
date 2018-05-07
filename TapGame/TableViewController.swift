@@ -21,7 +21,7 @@ UITableViewDataSource, UITableViewDelegate{
     // 配列定義
     var label2Array:Array<String> = []
     var label4Array:Array<String> = []
-    var secArray:Array<Double> = []
+    var secArray:Array<Int> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,17 +48,10 @@ UITableViewDataSource, UITableViewDelegate{
         let cell = table.dequeueReusableCell(withIdentifier: "bestTime1Cell",
                                              for: indexPath)
         
-        //let img = UIImage(named: imgArray[indexPath.row] as! String)
-        
-        // Tag番号 1 で UIImageView インスタンスの生成
-        //let imageView = cell.viewWithTag(1) as! UIImageView
-        //imageView.image = img
-        
-        // Tag番号 ２ で UILabel インスタンスの生成
+        //Tagごとに設定
         let label1 = cell.viewWithTag(1) as! UILabel
         label1.text = "No." + String(indexPath.row + 1)
         
-        // Tag番号 ３ で UILabel インスタンスの生成
         let label2 = cell.viewWithTag(2) as! UILabel
         label2.text = String(describing: label2Array[indexPath.row])
         
@@ -127,15 +120,15 @@ UITableViewDataSource, UITableViewDelegate{
         }
     }
     //secArray取得
-    func readSecArray() -> Array<Double>  {
+    func readSecArray() -> Array<Int>  {
         let defaults = UserDefaults.standard
-        if let aaa:Array<Double> = (defaults.object(forKey: secArrayForKey) as? Array<Double>)
+        if let aaa:Array<Int> = (defaults.object(forKey: secArrayForKey) as? Array<Int>)
         {
             return aaa
         }
         else
         {
-            return Array(repeating: 99.99, count: 10)
+            return Array(repeating: 9999, count: 10)
         }
     }
     //reset
@@ -143,7 +136,7 @@ UITableViewDataSource, UITableViewDelegate{
         //初期化
         label2Array = Array(repeating: "?", count: 10)
         label4Array = Array(repeating: "?", count: 10)
-        secArray = Array(repeating: 99.99, count: 10)
+        secArray = Array(repeating: 9999, count: 10)
     }
     @IBAction func resetAction(_ sender: UIButton) {
         //初期化

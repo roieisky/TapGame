@@ -16,8 +16,8 @@ class ViewController2: UIViewController {
     @IBOutlet weak var timerMSec: UILabel!
     
     var countNum = 3
-    var countTap = 1
-    var nowTime = 99.99
+    var countTap = 10
+    var nowTime = 9999
     // タイマー
     var timer : Timer!
     var startTime = Date()
@@ -135,10 +135,10 @@ class ViewController2: UIViewController {
         //時間更新
         timerSecond.text = sSecond
         timerMSec.text = sMsec
-        nowTime = Double(second + (msec / 100))
+        nowTime = (second * 100) + msec
         
         //59秒以上で強制終了
-        if(nowTime >= 59.00){
+        if(nowTime >= 5900){
             stopTimer()
             tapBtn.isHidden = true
             //画面遷移

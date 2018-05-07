@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF393FFF20A0303B0077F60C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF393FFE20A0303B0077F60C /* AVFoundation.framework */; };
+		DF39400120A0386F0077F60C /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39400020A0386F0077F60C /* ViewController4.swift */; };
+		DF39400320A0392D0077F60C /* ViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39400220A0392D0077F60C /* ViewController5.swift */; };
 		DFA672F7208839EC00DD8152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA672F6208839EC00DD8152 /* AppDelegate.swift */; };
 		DFA672F9208839EC00DD8152 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA672F8208839EC00DD8152 /* ViewController.swift */; };
 		DFA672FC208839EC00DD8152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA672FA208839EC00DD8152 /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF393FFE20A0303B0077F60C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DF39400020A0386F0077F60C /* ViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
+		DF39400220A0392D0077F60C /* ViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController5.swift; sourceTree = "<group>"; };
 		DFA672F3208839EC00DD8152 /* TapGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA672F6208839EC00DD8152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFA672F8208839EC00DD8152 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF393FFF20A0303B0077F60C /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF393FFD20A0303B0077F60C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF393FFE20A0303B0077F60C /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DFA672EA208839EC00DD8152 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +102,7 @@
 				DFA6730A208839EC00DD8152 /* TapGameTests */,
 				DFA67315208839EC00DD8152 /* TapGameUITests */,
 				DFA672F4208839EC00DD8152 /* Products */,
+				DF393FFD20A0303B0077F60C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +128,8 @@
 				DFA67326208870E700DD8152 /* ViewController2.swift */,
 				DFA673282088857200DD8152 /* ViewController3.swift */,
 				DFA6732A2089CC4F00DD8152 /* TableViewController.swift */,
+				DF39400020A0386F0077F60C /* ViewController4.swift */,
+				DF39400220A0392D0077F60C /* ViewController5.swift */,
 			);
 			path = TapGame;
 			sourceTree = "<group>";
@@ -269,10 +287,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA672F9208839EC00DD8152 /* ViewController.swift in Sources */,
+				DF39400120A0386F0077F60C /* ViewController4.swift in Sources */,
 				DFA672F7208839EC00DD8152 /* AppDelegate.swift in Sources */,
 				DFA673292088857200DD8152 /* ViewController3.swift in Sources */,
 				DFA6732B2089CC4F00DD8152 /* TableViewController.swift in Sources */,
 				DFA67327208870E700DD8152 /* ViewController2.swift in Sources */,
+				DF39400320A0392D0077F60C /* ViewController5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

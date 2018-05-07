@@ -24,13 +24,21 @@ class ViewController2: UIViewController {
     
     let conWidth = UIScreen.main.bounds.size.width
     let conHeight = UIScreen.main.bounds.size.height
+    var tapBtnDiameter = 80
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // カウントダウンタイマー作成
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController2.onUpdate(timer:)), userInfo: nil, repeats: true)
+        
+        //ボタン初期設定
+        tapBtnDiameter = Int(conWidth / 5)
+        tapBtn.frame = CGRect(x: 0, y: 0, width: tapBtnDiameter, height: tapBtnDiameter)
+        tapBtn.layer.cornerRadius = CGFloat(tapBtnDiameter / 2)
+        
         // Do any additional setup after loading the view.
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -87,9 +95,9 @@ class ViewController2: UIViewController {
     //ランダムな座標を求める
     //tapBtn.frame.origin = randPoint()
     func randPoint() -> CGPoint{
-        let randWidth  = CGFloat(arc4random_uniform(UInt32(conWidth)-80))
-        let randHeight = CGFloat(arc4random_uniform(UInt32(conHeight)-130))
-        let randPoint  = CGPoint(x:randWidth,y:randHeight + 20)
+        let randWidth  = CGFloat(arc4random_uniform(UInt32(conWidth) - UInt32(tapBtnDiameter)))
+        let randHeight = CGFloat(arc4random_uniform(UInt32(conHeight) - 70 - UInt32(tapBtnDiameter)))
+        let randPoint  = CGPoint(x:randWidth,y:randHeight + 70)
         
         return randPoint
     }

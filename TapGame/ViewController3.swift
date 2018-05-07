@@ -18,10 +18,6 @@ class ViewController3: UIViewController {
     var textMSec = "99"
     var sec = 9999
     
-    
-    
-    
-    
     //ForKey定義
     let label2ArrayForKey:String = "label2Key"
     let label4ArrayForKey:String = "label4Key"
